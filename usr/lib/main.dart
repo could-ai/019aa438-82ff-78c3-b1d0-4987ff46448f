@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:couldai_user_app/screens/home_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:couldai_user_app/supabase_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // TODO: Replace with your actual Supabase URL and Anon Key
-  // You can find these in your Supabase Dashboard -> Project Settings -> API
+  // Inicialização do Supabase usando o arquivo de configuração
+  // Certifique-se de atualizar o arquivo lib/supabase_config.dart com suas chaves reais
   await Supabase.initialize(
-    url: 'https://YOUR_PROJECT_ID.supabase.co',
-    anonKey: 'YOUR_ANON_KEY',
+    url: SupabaseConfig.url,
+    anonKey: SupabaseConfig.anonKey,
   );
 
   runApp(const MyApp());
